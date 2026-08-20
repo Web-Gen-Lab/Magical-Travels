@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,11 +102,16 @@
                         <h3 class="font-titan text-2xl mb-2 text-magicalPurple">Free Download: The Secret Carry-On ✨</h3>
                         <p class="text-md text-gray-600 mb-6 font-quicksand font-bold">The 5 crucial items you will deeply regret not packing for the parks. Enter your email to get the PDF instantly.</p>
                         
-                        <!-- ⚙️ FULLY WIRED LEAD CAPTURE FORM -->
-                        <form method="POST" action="https://script.google.com/macros/s/AKfycbyP_zGHNR7nKcRhaq-rcw9iN47Ox4SEOsCKoRWBaIFpRKYGtVCOW_hbBRsPN_XE4ejdqw/exec" class="flex flex-col sm:flex-row gap-3">
+                        <!-- ⚙️ UPGRADED BACKGROUND LEAD CAPTURE FORM -->
+                        <form id="lead-form" method="POST" action="https://script.google.com/macros/s/AKfycbwqiri2RetFHav-WcfbaYFxSKm5Gff4Ncu3u6Dw-8qn6jSwxBPjDKcplGTWGKOTkdQJdg/exec" class="flex flex-col sm:flex-row gap-3 relative">
                             <input type="email" name="email" aria-label="Email Address" placeholder="Your Email Address" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-full focus:outline-none focus:border-disneyGold font-quicksand font-bold" required>
-                            <button type="submit" class="bg-disneyGold text-magicalBlue px-6 py-3 rounded-full font-sniglet text-xl bubbly-btn">Get the Guide 📥</button>
+                            <button type="submit" class="bg-disneyGold text-magicalBlue px-6 py-3 rounded-full font-sniglet text-xl bubbly-btn whitespace-nowrap">Get the Guide 📥</button>
                         </form>
+                        
+                        <!-- Success Message -->
+                        <div id="success-message" class="hidden mt-4 text-magicalPurple font-bold font-quicksand bg-green-100 p-3 rounded-xl border border-green-300 text-center transition-all duration-300">
+                            ✨ Magic is on the way! Check your inbox.
+                        </div>
 
                     </div>
                 </div>
@@ -190,12 +195,45 @@
             </div>
 
             <p class="mb-2">&copy; 2026 Magical Travels with Staci. All Rights Reserved.</p>
-            <!-- LEGAL DISCLAIMER (Crucial for SEO and compliance when using the Disney name) -->
+            <!-- LEGAL DISCLAIMER -->
             <p class="text-xs leading-relaxed max-w-2xl mx-auto text-gray-500">
                 Not affiliated with, authorized or endorsed by, or in any way officially connected with The Walt Disney Company, Disney Enterprises, Inc., or any of their affiliates. For official Disney information, visit the official Disney website.
             </p>
         </div>
     </footer>
 
+    <!-- BACKGROUND SUBMISSION SCRIPT -->
+    <script>
+        document.getElementById('lead-form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Stop the page from redirecting
+            
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const msg = document.getElementById('success-message');
+            const data = new FormData(form);
+
+            // Change button text while sending
+            btn.innerText = "Sending... ✨";
+            btn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: data,
+                mode: 'no-cors' // Bypasses the strict Google security block
+            })
+            .then(() => {
+                form.reset(); // Clear the email box
+                btn.innerText = "Get the Guide 📥";
+                btn.disabled = false;
+                msg.classList.remove('hidden'); // Show success message
+                setTimeout(() => msg.classList.add('hidden'), 5000); // Hide it after 5 seconds
+            })
+            .catch(error => {
+                alert('Oops! There was a connection issue. Please try again.');
+                btn.innerText = "Get the Guide 📥";
+                btn.disabled = false;
+            });
+        });
+    </script>
 </body>
 </html>
