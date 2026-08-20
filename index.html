@@ -1,8 +1,19 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-032LNZSB8S"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-032LNZSB8S');
+    </script>
+    
     <!-- SEO Optimization: Targeted Title -->
     <title>Magical Travels with Staci | Expert Disney Vacation Planner & Personal Trip Designer</title>
     <!-- SEO Optimization: Meta Description -->
@@ -62,8 +73,8 @@
             <div class="text-3xl font-titan tracking-wider text-disneyGold text-outline-dark">
                 MAGICAL TRAVELS <span class="font-sniglet text-white text-shadow-none text-2xl ml-2">with Staci</span>
             </div>
-            <!-- 🔗 INSERT GOOGLE CALENDAR LINK BELOW -->
-            <a href="#consultation" class="hidden md:inline-block bg-disneyGold text-magicalBlue font-sniglet text-lg px-6 py-2 rounded-full bubbly-btn hover:bg-yellow-300">Book a Free Consultation</a>
+            <!-- 🗓️ WIRED CALENDAR LINK -->
+            <a href="https://calendar.app.google/F4FKcajXKRveqAk1A" target="_blank" rel="noopener noreferrer" class="hidden md:inline-block bg-disneyGold text-magicalBlue font-sniglet text-lg px-6 py-2 rounded-full bubbly-btn hover:bg-yellow-300">Book a Free Consultation</a>
         </div>
     </nav>
 
@@ -90,12 +101,13 @@
                     <div class="bg-white p-8 rounded-3xl shadow-2xl border-4 border-disneyGold transform hover:-translate-y-1 transition duration-300">
                         <h3 class="font-titan text-2xl mb-2 text-magicalPurple">Free Download: The Secret Carry-On ✨</h3>
                         <p class="text-md text-gray-600 mb-6 font-quicksand font-bold">The 5 crucial items you will deeply regret not packing for the parks. Enter your email to get the PDF instantly.</p>
-                        <form class="flex flex-col sm:flex-row gap-3">
-                            <!-- SEO Optimization: Accessible labels/placeholders -->
-                            <input type="email" aria-label="Email Address" placeholder="Your Email Address" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-full focus:outline-none focus:border-disneyGold font-quicksand font-bold" required>
-                            <!-- ⚙️ BACKEND: Later link this form to Google Apps Script -->
+                        
+                        <!-- ⚙️ FULLY WIRED LEAD CAPTURE FORM -->
+                        <form method="POST" action="https://script.google.com/macros/s/AKfycbyP_zGHNR7nKcRhaq-rcw9iN47Ox4SEOsCKoRWBaIFpRKYGtVCOW_hbBRsPN_XE4ejdqw/exec" class="flex flex-col sm:flex-row gap-3">
+                            <input type="email" name="email" aria-label="Email Address" placeholder="Your Email Address" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-full focus:outline-none focus:border-disneyGold font-quicksand font-bold" required>
                             <button type="submit" class="bg-disneyGold text-magicalBlue px-6 py-3 rounded-full font-sniglet text-xl bubbly-btn">Get the Guide 📥</button>
                         </form>
+
                     </div>
                 </div>
                 <div class="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white transform rotate-2 hover:rotate-0 transition duration-300">
@@ -154,8 +166,8 @@
                 </div>
                 
                 <div class="mt-20" id="consultation">
-                    <!-- 🔗 INSERT GOOGLE CALENDAR LINK BELOW -->
-                    <a href="#" class="bg-disneyGold text-magicalBlue px-10 py-5 rounded-full font-titan text-2xl bubbly-btn inline-block tracking-wide">Book Your Free Consultation 📆</a>
+                    <!-- 🗓️ WIRED CALENDAR LINK -->
+                    <a href="https://calendar.app.google/F4FKcajXKRveqAk1A" target="_blank" rel="noopener noreferrer" class="bg-disneyGold text-magicalBlue px-10 py-5 rounded-full font-titan text-2xl bubbly-btn inline-block tracking-wide">Book Your Free Consultation 📆</a>
                 </div>
             </div>
         </section>
